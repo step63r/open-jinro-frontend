@@ -42,11 +42,11 @@ const CreateRoom: React.FC<Props> = ({ socket }) => {
       socket.off('disconnect');
       socket.off('create');
     };
-  }, []);
+  }, [navigate, socket]);
 
   useEffect(() => {
     setHasError(user.name === '');
-  });
+  }, [user.name]);
 
   /**
    * ユーザー名が変更されたときのイベントハンドラ

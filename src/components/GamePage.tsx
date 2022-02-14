@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 const HUMAN_WIN = 'HumanWin';
-const WOLVES_WIN = 'WolvesWin';
+// const WOLVES_WIN = 'WolvesWin';
 const CONTINUE_GAME = 'ContinueGame';
 
 type Props = {
@@ -101,7 +101,7 @@ const GamePage: React.FC<Props> = ({ socket }) => {
       socket.off('awaitNight');
       socket.off('gameSet');
     };
-  }, []);
+  }, [socket]);
 
   /**
    * セッション情報を更新する

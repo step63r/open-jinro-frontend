@@ -42,11 +42,11 @@ const JoinRoom: React.FC<Props> = ({ socket }) => {
       socket.off('disconnect');
       socket.off('join');
     };
-  }, []);
+  }, [navigate, socket]);
 
   useEffect(() => {
     setHasError(user.name === '' || roomId === '');
-  });
+  }, [user.name, roomId]);
 
   const handleChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, name: e.target.value });

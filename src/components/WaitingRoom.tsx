@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Socket } from 'socket.io-client';
 import { Room, initRoom } from '../types/room';
-import { Rule } from '../types/rule';
 import { User, initUser } from '../types/user';
 import {
   Button,
@@ -70,7 +69,7 @@ const WaitingRoom: React.FC<Props> = ({ socket }) => {
       socket.off('leave');
       socket.off('choice');
     };
-  }, []);
+  }, [navigate, socket]);
 
   const handleStart = () => {
     socket.emit('choice', room.id);
