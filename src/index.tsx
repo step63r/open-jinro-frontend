@@ -21,8 +21,8 @@ const theme = createTheme({
   },
 });
 
-const BACKEND_HOST = process.env.BACKEND_HOST || 'localhost';
-const BACKEND_PORT = process.env.BACKEND_PORT || 3000;
+const BACKEND_HOST = process.env.BACKEND_HOST || 'http://localhost';
+const BACKEND_PORT = process.env.BACKEND_PORT || 3001;
 const socket = io(`${BACKEND_HOST}:${BACKEND_PORT}`);
 
 socket.on('connect', () => {
